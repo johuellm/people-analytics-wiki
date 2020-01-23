@@ -1,0 +1,20 @@
+select {
+    margin-left:3px;
+    margin-right:3px;
+}
+
+/*#dtBasicExample_info {
+    width: 33.333333%;
+}
+
+#dtBasicExample_paginate {
+    width: 66.666667%;
+}*/
+
+table{
+    font-size: 8.7pt;
+}
+
+.badge-Website{
+    color: aqua;
+}

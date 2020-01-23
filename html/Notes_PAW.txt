@@ -1,0 +1,16 @@
+Probleme/offene Punkte:
+- badges Farben iterieren
+	- workaround: css-klasse für jedes baged erstellen (aufwändig)
+		- viele if-Abfragen
+		- viele css-Klassen
+		- erster Schritt: Badges identifizieren
+	- besser: iterieren über die wörter, um daraus HEX oder rgb wert zu generieren
+	- Alternative: csv-Datei erstellen mit Bezeichungen und zugeordneten Farben
+
+- Aufteilung der Spalten
+	- Tabelle zu groß oder Schrift zu klein
+	- Idee: mehrere Spalten in eine größere, mehrzeilige Description-Spalte packen
+	- Spalten weglassen wahrscheinlich keine Alternative
+	
+- Detailseiten
+	- mit der einen CSV bisher ohne Sinn, da nicht mehr Inhalt als in Tabelle

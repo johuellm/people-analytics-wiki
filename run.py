@@ -12,7 +12,6 @@ env = Environment( loader = FileSystemLoader(templates_dir) )
 table = env.get_template('table.html')
 details = env.get_template('singlePageTemplate.html')
 
-
 filename = os.path.join(root, 'html', 'test.html')
 
 

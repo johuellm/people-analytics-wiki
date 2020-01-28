@@ -13,6 +13,7 @@ Probleme/offene Punkte:
 	- Spalten weglassen wahrscheinlich keine Alternative
 	
 - Detailseiten
+<<<<<<< HEAD
 	- mit der einen CSV bisher ohne Sinn, da nicht mehr Inhalt als in Tabelle
 	
 Mit Badges versehen:
@@ -27,3 +28,6 @@ Sidebar weg
 ERCIS CD
 Color generator
 Mobile Darstellung?! (Responsive extension DataTables) (Letzte Prio)
+=======
+	- mit der einen CSV bisher ohne Sinn, da nicht mehr Inhalt als in Tabelle
+>>>>>>> 18496acc6502e21ed8ae7c8ba8191e5308b8d00a

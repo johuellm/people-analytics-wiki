@@ -22,7 +22,7 @@
       <!-- Page Content -->
       <div id="page-content-wrapper">
   
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">  
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom bg-primary">  
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -51,8 +51,8 @@
 
             </ul>
             <form class="form-inline my-2 my-lg-0 navbar-search pull-right">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <input class="form-control mr-sm-2 btn-search-navbar" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0 btn-search-navbar" type="submit">Search</button>
           </form>
           </div>
         </nav>
@@ -63,7 +63,7 @@
       <span style="width:100%">
       <table class="table table-striped table-bordered table-responsive" id="dtBasicExample" cellspacing="0" width="100%">
   
-        <thead>
+        <thead class="thead-ercis">
           {%for row in data[0]%}
             {%if loop.index0!=0%}
           <th class="th-sm" >
@@ -85,10 +85,11 @@
                   <a href="{{row[_]}}.html">{{row[_]}}</a>
                 </td>
               {% else %}
+              <!-- TODO: vernünftige Trennung mehrerer Werte in einem Feld für vernünftige Badges. Funktioniert so schon ganz ok, aber ist noch nicht optimal-->
               <td class="word-break">
                 {%if _==7 or _==8 or _==10 or _==13%} 
-                  {%if "&" in row[_] or " or " in row[_] %}
-                    {% set sub = row[_].replace(" or ", "&").split("&") %}
+                  {%if "&" in row[_] or " or " in row[_] or " and " in row[_] or ", " in row[_] %}
+                    {% set sub = row[_].replace(" or ", "&").replace(", ","&").replace(" and ", "&").split("&") %}
                     {%for row in sub %}
                       <span class="badge {{row.replace(' ','').replace('(','').replace(')','')}}">{{row}}</span>
                     {% endfor %}

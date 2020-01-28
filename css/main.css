@@ -19,10 +19,40 @@ table{
     word-break:normal;
 }
 
+a {
+    color: #852339
+}
+
+.paginate_button{
+    background-color: #852339;
+}
+
 .Dashboard {
 
 }
 
 .Platformitself {
     
+}
+
+.bg-primary {
+    background-color: #852339 !important;
+}
+
+.navbar {
+    border-radius: 0px !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.btn-search-navbar {
+    background-color: white;
+    color: #852339;
+}
+
+.thead-ercis {
+    background-color: #852339;
+    color: white;
 }

@@ -11,8 +11,7 @@ templates_dir = os.path.join(root, 'templates')
 env = Environment( loader = FileSystemLoader(templates_dir) )
 table = env.get_template('table.html')
 details = env.get_template('singlePageTemplate.html')
-#TODO generator for single rows out of the csv file
-#dircetly connected via links
+
 
 filename = os.path.join(root, 'html', 'test.html')
 

@@ -17,17 +17,7 @@
   <body>
     <div class="d-flex" id="wrapper">
 
-      <!-- Sidebar -->
-      <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">People Analytics Wiki</div>
-        <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Vendors</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Applications</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Categories</a>
-        </div>
-      </div> 
-      <!-- /#sidebar-wrapper -->
+
   
       <!-- Page Content -->
       <div id="page-content-wrapper">
@@ -68,8 +58,9 @@
         </nav>
   
   
-        <div class="container-fluid">
+        <div class="container-fluid table-whole-screen">
       <h1>Overview of People Analytics Software-Vendors</h1>
+      <span style="width:100%">
       <table class="table table-striped table-bordered table-responsive" id="dtBasicExample" cellspacing="0" width="100%">
   
         <thead>
@@ -94,12 +85,26 @@
                   <a href="{{row[_]}}.html">{{row[_]}}</a>
                 </td>
               {% else %}
-              <td> <span class="badge" id={{row[_]}}>{{row[_]}}</span></td>
+              <td class="word-break">
+                {%if _==7 or _==8 or _==10 or _==13%} 
+                  {%if "&" in row[_] or " or " in row[_] %}
+                    {% set sub = row[_].replace(" or ", "&").split("&") %}
+                    {%for row in sub %}
+                      <span class="badge {{row.replace(' ','').replace('(','').replace(')','')}}">{{row}}</span>
+                    {% endfor %}
+                  {%else%}
+                    <span class="badge {{row[_].replace(' ','').replace('(','').replace(')','')}}">{{row[_]}}</span>
+                  {% endif %}
+                {% else %}
+                  {{row[_]}}
+                {% endif %}
+              </td>
               {% endif %}
             {% endfor %}
           </tr>
         {% endfor %}
     </table>
+  </span>
   </div>    </div>
       </div>
       <!-- /#page-content-wrapper -->

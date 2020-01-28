@@ -14,3 +14,16 @@ Probleme/offene Punkte:
 	
 - Detailseiten
 	- mit der einen CSV bisher ohne Sinn, da nicht mehr Inhalt als in Tabelle
+	
+Mit Badges versehen:
+	- Level of Analysis
+	- Data sources
+	- IT involved
+	- Stakeholders
+
+Zeilenfilter (je nach Zeitaufwand)
+Hide column Möglichkeit implementieren
+Sidebar weg
+ERCIS CD
+Color generator
+Mobile Darstellung?! (Responsive extension DataTables) (Letzte Prio)

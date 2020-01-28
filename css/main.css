@@ -23,6 +23,9 @@ a {
     color: #852339
 }
 
+.home-link {
+    font-size: x-large;
+}
 .paginate_button{
     background-color: #852339;
 }

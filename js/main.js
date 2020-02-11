@@ -1,7 +1,13 @@
 $(document).ready(function () {
-    $('#dtBasicExample').DataTable({});
+    var table = $('#dtBasicExample').DataTable({});
     $('.dataTables_length').addClass('bs-select');
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+        var column = table.column( $(this).attr('data-column') );
+        column.visible( ! column.visible() );
+    } );
     });
+
 
 window.onload = function(){
         $.get("sidebar.html", function(data){
@@ -46,3 +52,4 @@ function generateValue(){
       'apple'.split('').forEach(function (c) {
         console.log(c + ': ' + c.charCodeAt(0));
       });}
+

@@ -34,14 +34,6 @@ a {
     background-color: #852339;
 }
 
-.Dashboard {
-
-}
-
-.Platformitself {
-    
-}
-
 .bg-primary {
     background-color: #852339 !important;
 }
@@ -61,5 +53,14 @@ a {
 
 .thead-ercis {
     background-color: #852339;
+    color: white;
+}
+
+.dropdown-toggle {
+    background-color: #852339;
+}
+
+.dropdown-toggle:hover {
+    background-color: #666;
     color: white;
 }

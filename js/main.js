@@ -5,7 +5,7 @@ $(document).ready(function () {
         e.preventDefault();
         var column = table.column( $(this).attr('data-column') );
         column.visible( ! column.visible() );
-    } );
+    });
     });
 
 

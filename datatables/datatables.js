@@ -4673,6 +4673,8 @@ jQuery.fn.extend( {
 		return this.each( function() {
 			if ( isHiddenWithinTree( this ) ) {
 				jQuery( this ).show();
+				//Changed something here
+				jQuery(this).disable();
 			} else {
 				jQuery( this ).hide();
 			}
@@ -23963,7 +23965,7 @@ if (typeof jQuery === 'undefined') {
 		 * feature enabled (`lengthChange`) then the end user will be able to override
 		 * this to a custom setting using a pop-up menu.
 		 *  @type int
-		 *  @default 10
+		 *  @default 50 changed
 		 *
 		 *  @dtopt Options
 		 *  @name DataTable.defaults.pageLength
@@ -23975,7 +23977,7 @@ if (typeof jQuery === 'undefined') {
 		 *      } );
 		 *    } )
 		 */
-		"iDisplayLength": 10,
+		"iDisplayLength": 50,
 	
 	
 		/**

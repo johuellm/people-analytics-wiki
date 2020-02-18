@@ -12,7 +12,7 @@ select {
 }*/
 
 table{
-    font-size: 8.7pt;
+    font-size: 100%;
 }
 
 .odd {
@@ -63,4 +63,18 @@ a {
 .dropdown-toggle:hover {
     background-color: #666;
     color: white;
+}
+
+#page-content-wrapper {
+    min-width: 100%;
+}
+
+.myTooltip {
+    padding:2px;
+    width:auto;
+    height: 100%;
+}
+
+.searchbar {
+    height: 100%;
 }

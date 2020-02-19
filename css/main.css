@@ -51,6 +51,12 @@ a {
     color: #852339;
 }
 
+.btn-search-navbar:hover {
+    background-color: #666;
+    color: white;
+    border-color: #666;
+}
+
 .thead-ercis {
     background-color: #852339;
     color: white;
@@ -77,4 +83,43 @@ a {
 
 .searchbar {
     height: 100%;
+}
+
+.navbar {
+    padding:0;
+}
+
+.site-link:hover {
+    /*background-color: #666;*/
+    transform: scale(1.2);
+}
+
+
+.site-link {
+    margin-right: 5px;
+    padding-left:5px;
+    padding-right: 5px;
+}
+
+#dtBasicExample td{
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+#dtBasicExample th{
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+#dtBasicExample {
+    width:100% !important;
+}
+
+.check-toggle {
+    margin-left: 3px;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../datatables/jQuery-3.3.1/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../datatables/datatables.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
+    {%include 'head.html'%}
 </head>
 
 <body>
@@ -18,42 +19,26 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom bg-primary">  
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link home-link" href="home.html">People-Analytics Wiki <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0 navbar-search pull-right">
-            <input class="form-control mr-sm-2 btn-search-navbar" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0 btn-search-navbar" type="submit">Search</button>
-        </form>
-        </div>
-      </nav>
-
+      {% include 'navbar.html' %}
       <div class="container-fluid">
+        <a href="index.html">Back</a>
         <h1>{{data[1]}}</h1>
         <table class="table table-striped table-bordered table-responsive display">
           <thead class="thead-ercis">
             <th class="th-sm">Aspect</th>
             <th class="th-sm">Description</th>
+            <th clsss="th-sm">Extent</th>
           </thead>
           {% for row in data %}
             {% if loop.index0!=0%}
             <tr>
               <td>{{head[loop.index0]}}</td>
+              <td>{{tooltip[loop.index0]}}</td>
               <td>{{row}}</td>
             </tr>
             {%endif%}
           {% endfor %}
         </table>
       </div>
-</div>
-      
+</div>      
 </body>

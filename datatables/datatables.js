@@ -16330,7 +16330,7 @@ if (typeof jQuery === 'undefined') {
 			id:      oSettings.sTableId+'_wrapper',
 			'class': classes.sWrapper + (oSettings.nTFoot ? '' : ' '+classes.sNoFooter)
 		} );
-	
+		
 		oSettings.nHolding = holding[0];
 		oSettings.nTableWrapper = insert[0];
 		oSettings.nTableReinsertBefore = oSettings.nTable.nextSibling;
@@ -17556,8 +17556,7 @@ if (typeof jQuery === 'undefined') {
 		// Fire length change event
 		_fnCallbackFire( settings, null, 'length', [settings, len] );
 	}
-	
-	
+		
 	/**
 	 * Generate the node required for user display length changing
 	 *  @param {object} settings dataTables settings object
@@ -28141,7 +28140,7 @@ var DataTable = $.fn.dataTable;
 /* Set the defaults for DataTables initialisation */
 $.extend( true, DataTable.defaults, {
 	dom:
-		"<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+		"<'row identify'<'col-sm-6'l><'col-sm-6'f>>" +
 		"<'row'<'col-sm-12'tr>>" +
 		"<'row'<'col-sm-4'i><'col-sm-8'p>>",
 	renderer: 'bootstrap'

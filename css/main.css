@@ -123,3 +123,8 @@ a {
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.page-footer {
+    background-color: #852339;
+    color: white;
+}

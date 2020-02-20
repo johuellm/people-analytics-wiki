@@ -1,8 +1,24 @@
 $(document).ready(function () {
-    var table = $('#dtBasicExample').DataTable({});
-    var invisibleCols = [1, 3, 11, 13, 14, 15, 16];
-    var visibleCols = [0, 2, 4, 5, 6, 7, 8, 9, 10, 12];
+
+    if(sessionStorage.getItem("sessionKey") == "true") {
+        var table = $('#dtBasicExample').DataTable({});
+        var invisibleCols = sessionStorage.getItem("invisibleCols").split(',').map(function(item) {
+            return parseInt(item, 10);
+        });;
+        var visibleCols = sessionStorage.getItem("visibleCols").split(',').map(function(item) {
+            return parseInt(item, 10);
+        });;;
+    } else {
+        var table = $('#dtBasicExample').DataTable({});
+        var invisibleCols = [1, 3, 11, 13, 14, 15, 16];
+        var visibleCols = [0, 2, 4, 5, 6, 7, 8, 9, 10, 12];
+        sessionStorage.setItem("sessionKey", "true");
+        sessionStorage.setItem("invisibleCols", invisibleCols);
+        sessionStorage.setItem("visibleCols", visibleCols);
+    }
+
     var defaultCols = [0, 2, 4, 5, 6, 7, 8, 9, 10, 12];
+
     /*Workaround for the location of the "toggle-columns"-dropdown*/
     var itm = document.getElementById("toggle-dropdown");
     var cln = itm.cloneNode(true);
@@ -10,7 +26,7 @@ $(document).ready(function () {
     var wrapper = document.getElementById("dtBasicExample_wrapper");
     wrapper.insertBefore(cln, wrapper.childNodes[0]);
 
-
+    
     $('.dataTables_length').addClass('bs-select');
     $('a.toggle-vis').on( 'click', function (e) {
         e.preventDefault();
@@ -40,6 +56,7 @@ $(document).ready(function () {
                 visibleCols.splice(0, visibleCols.length);
             }
         }
+        /*show default function*/
         else if ($(this).attr('data-column')==997){
             for(var i=0; i<=16;i++) {
                 if(defaultCols.indexOf(i)==-1 && invisibleCols.indexOf(i) == -1) {
@@ -48,7 +65,7 @@ $(document).ready(function () {
                     invisibleCols.push(i);
                     document.getElementById("column-" + i).innerHTML = "";
                     visibleCols.splice(visibleCols.indexOf(i), 1)
-                } else if(defaultCols.indexOf(i)>0 && invisibleCols.indexOf(i)>0) {
+                } else if(defaultCols.indexOf(i)>=0 && visibleCols.indexOf(i)==-1) {
                     var showCol = table.column(i);
                     showCol.visible( ! showCol.visible());
                     visibleCols.push(i);
@@ -60,37 +77,42 @@ $(document).ready(function () {
         else {
             var column = table.column( $(this).attr('data-column') );
             column.visible( ! column.visible() );
-            var elementIdString =  $(this).attr('data-column');
+            var elementIdString =  parseInt($(this).attr('data-column'));
             var text = "column-"
             var finalId = text + elementIdString;
             if(column.visible()==true) {
                 document.getElementById(finalId).innerHTML = "X";
                 visibleCols.push(elementIdString);
-                invisibleCols.splice(invisibleCols.indexOf(elementIdString)+1, 1);
+                invisibleCols.splice(invisibleCols.indexOf(elementIdString), 1);
+                alert(invisibleCols + "   " + visibleCols);
             } else {
                 document.getElementById(finalId).innerHTML = "";
                 invisibleCols.push(elementIdString);
-                visibleCols.splice(visibleCols.indexOf(elementIdString)+1,1);
+                visibleCols.splice(visibleCols.indexOf(elementIdString),1);
+                alert(invisibleCols + "   " + visibleCols);
             }
         }
+        sessionStorage.setItem("table", table);
+        sessionStorage.setItem("invisibleCols", invisibleCols);
+        sessionStorage.setItem("visibleCols", visibleCols);
     });
 
     /*set initial checks*/
-    for(var i = 0;i<=16;i++) {
-        var fieldId = "column-" + i;
-        document.getElementById(fieldId).innerHTML = "X";
-    }
+        for(var i = 0;i<=16;i++) {
+            var fieldId = "column-" + i;
+            document.getElementById(fieldId).innerHTML = "X";
+        }
 
     /*removes non-default columns that are definded in the param invisibleCols
     remove checks*/
-    for(var item in invisibleCols) {
-        var columnToHide = table.column(invisibleCols[item]);
-        document.getElementById("column-"+invisibleCols[item]).innerHTML = "";
-        columnToHide.visible( ! columnToHide.visible());
-        }
-
-
-    /*TODO: loop through columns and toggle the not-default columns*/
+        for(var item in invisibleCols) {
+            var columnToHide = table.column(invisibleCols[item]);
+            document.getElementById("column-"+invisibleCols[item]).innerHTML = "";
+            columnToHide.visible( ! columnToHide.visible());
+            sessionStorage.setItem("table", table);
+            sessionStorage.setItem("invisibleCols", invisibleCols);
+            sessionStorage.setItem("visibleCols", visibleCols);
+            }
     });
 
 

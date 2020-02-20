@@ -50,12 +50,12 @@
         <thead class="thead-ercis">
           {%for row in data[0]%}
             {%if loop.index0!=0%}
-          <th class="th-sm" >
-            <span data-toggle="tooltip" data-placement="bottom" title="{{data[1][loop.index0]}}" class="myTooltip">
+          <th class="th-sm">
+            <div data-toggle="tooltip" data-placement="bottom" title="{{data[1][loop.index0]}}" class="myTooltip">
 
                 {{row}}
 
-            </span>
+            </div>
           </th>
             {% endif %}
           {%endfor%}
@@ -93,11 +93,8 @@
   </div>    </div>
       </div>
       <!-- /#page-content-wrapper -->
-  
+    {% include 'footer.html' %}
     </div>
     <!-- /#wrapper -->
-    <script>
-      includeHTML();
-      </script> 
   </body>
 </html>

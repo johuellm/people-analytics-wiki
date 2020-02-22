@@ -84,12 +84,10 @@ $(document).ready(function () {
                 document.getElementById(finalId).innerHTML = "X";
                 visibleCols.push(elementIdString);
                 invisibleCols.splice(invisibleCols.indexOf(elementIdString), 1);
-                alert(invisibleCols + "   " + visibleCols);
             } else {
                 document.getElementById(finalId).innerHTML = "";
                 invisibleCols.push(elementIdString);
                 visibleCols.splice(visibleCols.indexOf(elementIdString),1);
-                alert(invisibleCols + "   " + visibleCols);
             }
         }
         sessionStorage.setItem("table", table);

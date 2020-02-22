@@ -128,3 +128,7 @@ body {
     background-color: #852339;
     color: white;
 }
+
+.btn-secondary.focus, .btn-secondary:focus {
+    color: #fff !important;
+}

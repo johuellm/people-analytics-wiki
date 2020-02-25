@@ -28141,7 +28141,7 @@ var DataTable = $.fn.dataTable;
 $.extend( true, DataTable.defaults, {
 	dom:
 		"<'row identify'<'col-sm-6'l><'col-sm-6'f>>" +
-		"<'row'<'col-sm-12'tr>>" +
+		"<'row table-scroll'<'col-sm-12 full-width-table'tr>>" +
 		"<'row'<'col-sm-4'i><'col-sm-8'p>>",
 	renderer: 'bootstrap'
 } );

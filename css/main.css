@@ -114,6 +114,7 @@ a {
 
 #dtBasicExample {
     width:100% !important;
+    overflow: scroll;
 }
 
 .check-toggle {
@@ -140,4 +141,27 @@ body {
 
 .toggle-vis {
     cursor: pointer;
+}
+
+.toggle-vis:active {
+    background-color: #852339;
+    color: white !important;
+}
+
+hr {
+    border-color: #666;
+}
+
+.table-scroll {
+    width: 100%;
+    margin: 0;
+}
+
+.dropdown-divider {
+    border-color: #666;
+}
+
+.full-width-table {
+    padding-left: 0;
+    padding-right: 0;
 }

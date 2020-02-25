@@ -37,7 +37,7 @@
         </li>
 
         <li class="pull-right col-sm-6 align-self-center">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0  align-items-center pull-right">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0 align-items-center pull-right">
             <li class="nav-item active">
               <a href="help.html" class="nav-link site-link">Help</a>
             </li>
@@ -45,9 +45,9 @@
               <a href="about.html" class="nav-link site-link">About</a>
             </li>
             <li class="pull-right">
-              <form class="form-inline my-2 my-lg-0 navbar-search pull-right">
-                <input class="form-control mr-sm-2 btn-search-navbar" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0 btn-search-navbar" type="submit">Search</button>
+              <form class="form-inline my-2 my-lg-0 navbar-search pull-right" id="search-navbar">
+                <input class="form-control mr-sm-2 btn-search-navbar" type="search" placeholder="Search" aria-label="Search" id="searchTerm">
+                <button class="btn btn-outline-success my-2 my-sm-0 btn-search-navbar" onclick="submitSearch()">Search</button>
               </form>
             </li>
           </ul>

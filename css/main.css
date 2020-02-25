@@ -132,3 +132,12 @@ body {
 .btn-secondary.focus, .btn-secondary:focus {
     color: #fff !important;
 }
+
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show > .btn-outline-success.dropdown-toggle {
+    background-color: #666;
+    border-color: #666;
+}
+
+.toggle-vis {
+    cursor: pointer;
+}

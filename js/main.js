@@ -152,9 +152,6 @@ function includeHTML() {
         $('[data-toggle="tooltip"]').tooltip()
       })
 
-function generateValue(){
-
-      'apple'.split('').forEach(function (c) {
-        console.log(c + ': ' + c.charCodeAt(0));
-      });}
-
+function submitSearch() {
+    
+}

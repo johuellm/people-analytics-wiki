@@ -38,7 +38,7 @@ $(document).ready(function () {
                     var columnToShow = table.column(invisibleCols[item]);
                     columnToShow.visible( ! columnToShow.visible());
                     visibleCols.push(invisibleCols[item]);
-                    document.getElementById("column-" + invisibleCols[item]).innerHTML = "&nbsp;X";
+                    document.getElementById("column-" + invisibleCols[item]).innerHTML = "X";
                 }
                 invisibleCols.splice(0, invisibleCols.length);
             }
@@ -69,7 +69,7 @@ $(document).ready(function () {
                     var showCol = table.column(i);
                     showCol.visible( ! showCol.visible());
                     visibleCols.push(i);
-                    document.getElementById("column-" + i).innerHTML = "&nbsp;X";
+                    document.getElementById("column-" + i).innerHTML = "X";
                     invisibleCols.splice(invisibleCols.indexOf(i), 1)
                 }
             }
@@ -81,7 +81,7 @@ $(document).ready(function () {
             var text = "column-"
             var finalId = text + elementIdString;
             if(column.visible()==true) {
-                document.getElementById(finalId).innerHTML = "&nbsp;X";
+                document.getElementById(finalId).innerHTML = "X";
                 visibleCols.push(elementIdString);
                 invisibleCols.splice(invisibleCols.indexOf(elementIdString), 1);
             } else {
@@ -98,7 +98,7 @@ $(document).ready(function () {
     /*set initial checks*/
         for(var i = 0;i<=16;i++) {
             var fieldId = "column-" + i;
-            document.getElementById(fieldId).innerHTML = "&nbsp;X";
+            document.getElementById(fieldId).innerHTML = "X";
         }
 
     /*removes non-default columns that are definded in the param invisibleCols

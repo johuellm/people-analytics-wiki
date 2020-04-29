@@ -73,11 +73,20 @@
                 {%if _==7 or _==8 or _==10 or _==13%} 
                   {%if "&" in row[_] or " or " in row[_] or " and " in row[_] or ", " in row[_] %}
                     {% set sub = row[_].split("&") %}
+
                     {%for row in sub %}
-                      <span class="badge {{row.replace(' ','').replace('(','').replace(')','').lower()}}">{{row}}</span>
+                      {% if row|length>=40 %}
+                        {{row}}
+                      {%else%}
+                        <span class="badge {{row.replace(' ','').replace('(','').replace(')','').lower()}}">{{row}}</span>
+                      {%endif%}
                     {% endfor %}
                   {%else%}
-                    <span class="badge {{row[_].replace(' ','').replace('(','').replace(')','').lower()}}">{{row[_]}}</span>
+                    {% if row[_]|length>=40 %}
+                      {{row[_]}}
+                    {%else%}
+                      <span class="badge {{row[_].replace(' ','').replace('(','').replace(')','').lower()}}">{{row[_]}}</span>
+                    {%endif%}
                   {% endif %}
                 {% else %}
                   {{row[_]}}

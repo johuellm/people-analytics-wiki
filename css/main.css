@@ -168,3 +168,7 @@ hr {
     padding-left: 0;
     padding-right: 0;
 }
+
+#teaser {
+    max-width: 1024px;
+}

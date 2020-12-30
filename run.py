@@ -5,8 +5,9 @@ from itertools import groupby
 from operator import itemgetter
 from io import StringIO
 import csv
+import subprocess
 
-def main(): 
+def build_templates(): 
   # Paths
   root = os.path.dirname(os.path.abspath(__file__))
   templates_dir = os.path.join(root, 'templates')
@@ -26,15 +27,14 @@ def main():
   vendors_folder = os.path.join(root,"html", "vendors")
 
   # Load content
-  aboutContent = open("resources/about.html","r").read()
-  helpContent = open("resources/help.html","r").read()
-
+  aboutContent = open("templates/about.html","r").read()
+  helpContent = open("templates/help.html","r").read()
   vendors_csv = csv.reader( open("csv/Vendors_Coding.csv", "r" ), delimiter=';' )
-  consultancies_csv = csv.reader(open("csv/Consultancies_Coding.csv", "r"), delimiter=';')
+  # consultancies_csv = csv.reader(open("csv/Consultancies_Coding.csv", "r"), delimiter=';')
   # academics_csv = csv.reader(open("csv/Academics_Coding.csv", "r"), delimiter=";")
 
   vendors_data = [ row for row in vendors_csv]
-  consultancies_data = [row for row in consultancies_csv]
+  # consultancies_data = [row for row in consultancies_csv]
   # academics_data = [row for row in academics_csv if not "".join(row).startswith('#')]
 
   # create necessary folders
@@ -56,11 +56,44 @@ def main():
   with open(filename_index, 'w+') as f:
       f.write(table.render(data=vendors_data))
 
-  with open(filename_consultancies, 'w+') as f:
-      f.write(table.render(data=consultancies_data))
+  # with open(filename_consultancies, 'w+') as f:
+  #     f.write(table.render(data=consultancies_data))
 
-# with open(filename_academics, 'w+') as f:
-#     f.write(table.render(data=academics_data))
+  # with open(filename_academics, 'w+') as f:
+  #     f.write(table.render(data=academics_data))
+
+
+
+def copy_static_files():
+
+  # copy static files using cp, because shutil has some gimmicks with wsl (windows subsystem for linux)
+
+  # create top-level folder
+  if not os.path.exists("html"):
+    os.makedirs("html")
+
+  css_path = os.path.join("html", "css")
+  if not os.path.exists(css_path):
+    os.makedirs(css_path)
+  subprocess.call('cp -r ./css/* %s' % css_path, shell=True)
+
+  datatables_path = os.path.join("html", "datatables")
+  if not os.path.exists(datatables_path):
+    os.makedirs(datatables_path)
+  subprocess.call('cp -r ./datatables/* %s' % datatables_path, shell=True)
+  
+  js_path = os.path.join("html", "js")
+  if not os.path.exists(js_path):
+    os.makedirs(js_path)
+  subprocess.call('cp -r ./js/* %s' % js_path, shell=True)
+
+  resources = os.path.join("html", "resources")
+  if not os.path.exists(resources):
+    os.makedirs(resources)
+  subprocess.call('cp -r ./resources/* %s' % resources, shell=True)
+
+
 
 if __name__ == "__main__":
-  main()
+  build_templates()
+  copy_static_files()

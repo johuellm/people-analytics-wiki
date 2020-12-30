@@ -168,3 +168,15 @@ hr {
     padding-left: 0;
     padding-right: 0;
 }
+
+#teaser {
+    max-width: 1024px;
+}
+
+@media only screen and (min-width: 768px) {
+    .about-box {
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-bottom: 75px;
+    }
+}

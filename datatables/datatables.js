@@ -24489,7 +24489,7 @@ if (typeof jQuery === 'undefined') {
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Filter:",
 	
 	
 			/**
